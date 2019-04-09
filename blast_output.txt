@@ -1,0 +1,52 @@
+
+
+awk <Na23_gg.names.count '{print $2, $1}' >Na23_gg.names.final.count
+
+sort Na23_gg.names |uniq -c > Na23_gg.names.count
+
+awk < Na23_gg.out '{print $2}' >Na23_gg.names
+
+
+perl combine_blast_ggtax.pl Na23_gg.names.final.count /homeappl/home/hultman/appl_taito/GREENGENES/gg_13_8_99.gg.tax test.out
+
+
+awk '$3>=1 { print $0 }' test.out2>Na23_gg_blastout.txt
+
+
+
+awk < Na23_gg.out '{print $2}' >Na23_gg.names
+
+sort Na23_gg.names |uniq -c > Na23_gg.names.count
+
+awk <Na23_gg.names.count '{print $2, $1}' >Na23_gg.names.final.count
+perl combine_blast_ggtax.pl Na23_gg.names.final.count /homeappl/home/hultman/appl_taito/GREENGENES/gg_13_8_99.gg.tax Na23_gg.names.blasthits.out
+awk '$3>=1 { print $0 }' Na23_gg.names.blasthits.out > Na23_gg_blastout.txt
+
+#######
+awk < Na23_gg.out '{print $2}' |sort  |uniq -c | awk '{print $2, $1}' >Na23_gg.names.final.count
+#######
+perl combine_blast_ggtax.pl Na23_gg.names.final.count /homeappl/home/hultman/appl_taito/GREENGENES/gg_13_8_99.gg.tax Na23_gg.names.blasthits.out
+awk '$3>=1 { print $0 }' Na23_gg.names.blasthits.out > Na23_gg_blastout.txt
+
+
+Get extra column with the sample name for pivot table:
+
+awk '{print $0"\tNa23"}' Na23_gg_blastout.txt >Na23_gg.txt
+
+
+
+awk < Na23.gg.sort.100 '{print $2}' >Na23.gg.names
+sort Na23.gg.names |uniq -c > Na23.gg.names.count
+awk <Na23.gg.names.count '{print $2, $1}' >Na23.gg.names.final.count
+perl combine_blast_ggtax.pl Na23.gg.names.final.count /homeappl/home/hultman/appl_taito/GREENGENES/gg_13_8_99.gg.tax Na23.gg.names.blasthits.out
+awk '$3>=1 { print $0 }' Na23.gg.names.blasthits.out > Na23.gg_blastout.txt
+awk '{print $0"\tNa23”}’ Na23.gg_blastout.txt > Na23.gg.txt
+
+awk '{print $0"\tNa22”}’ Na22.gg_blastout.txt > Na22.gg.txt
+awk '{print $0"\tNa21”}’ Na21.gg_blastout.txt > Na21.gg.txt
+awk '{print $0"\tNa20”}’ Na20.gg_blastout.txt > Na20.gg.txt
+
+awk '{print $0"\tNa20”}’ Na20.gg_blastout.txt >Na20.gg.txt
+awk '{print $0"\tNa19”}’ Na19.gg_blastout.txt >Na19.gg.txt
+awk '{print $0"\tNa18”}’ Na18.gg_blastout.txt >Na18.gg.txt
+awk '{print $0"\tNa17”}’ Na17.gg_blastout.txt >Na17.gg.txt
