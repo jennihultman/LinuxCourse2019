@@ -103,7 +103,7 @@ and they should be transformed as
 ```
 
 ## Submit your essay to the teacher
-Save your results as a *.txt* file and move them to a shared folder in your *wrk* directory. Make sure to give **Jenni** and **Mirko** access to your results (*look carefully the instructions on CSC webpage and remember to share the file with **all users***). Finally, send to us an Email with the path where is your essay in your CSC account. **Note: we will accept only essays which are on your CSC account. If the file is not accessible to us you will fail the exam.**
+Save your results as a *.txt* file and move them to a shared folder in your *wrk* directory. Make sure to give **Jenni** and **Mirko** access to your results (*look carefully the instructions on CSC webpage and remember to share the file with **all users***). Finally, send to Jenni (jenni.hultman@helsinki.fi) an email with the path where is your essay in your CSC account. **Note: we will accept only essays which are on your CSC account. If the file is not accessible to us you will fail the exam.**
 
 You will pass the exam with 30 out of 60 points.
 We will consider also partial answers.
